@@ -2,7 +2,20 @@
 	"name": "authoring-helper",
 	"displayName": "Authoring Helper",
 	"description": "Authoring Helper is a Visual Studio Code extension to automatically or by command insert a header to your files.",
-	"version": "0.0.1",
+	"version": "1.0.1",
+	"publisher": "JustSxm",
+	"license": "MIT",
+	"keywords": [
+		"vscode",
+		"authoring",
+		"helper",
+		"author",
+		"generator",
+		"head",
+		"header",
+		"comment"
+	],
+	"icon": "https://i.imgur.com/WT7lgEd.png",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
