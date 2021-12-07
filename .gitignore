@@ -1,0 +1,7 @@
+out/*
+node_modules/*
+.vscode/*
+package-lock.json
+.eslintrc.json
+.vscodeignore
+tsconfig.json
