@@ -11,7 +11,7 @@
 	],
 	"activationEvents": [
 		"onCommand:authoring-helper.insertHeader",
-		"*"
+		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -39,7 +39,7 @@
 				"authoring-helper.information.dateFormat": {
 					"type": "string",
 					"description": "The date format to use in the header. Year = yyyy, Months = MM, Days = dd, Hours = HH, Minutes = mm, Seconds = ss",
-					"default": "yyyy-MM-dd",
+					"default": "yyyy-MM-dd HH:mm:ss",
 					"scope": "window"
 				},
 				"authoring-helper.enable.author": {
@@ -63,6 +63,30 @@
 				"authoring-helper.enable.insertOnCreation": {
 					"type": "boolean",
 					"description": "Automatically insert the header on file creation.",
+					"default": true,
+					"scope": "window"
+				},
+				"authoring-helper.information.description": {
+					"type": "string",
+					"description": "The description for your project to put in the header.",
+					"default": "Authoring Helper is a Visual Studio Code extension to automatically or by command insert a header to your files.",
+					"scope": "window"
+				},
+				"authoring-helper.information.customHeader": {
+					"type": "string",
+					"description": "Use this to insert a custom header. Use the following variables: {author}, {email}, {description}, {creation} and {modification}. Enable Toggles will be ignored.",
+					"default": "",
+					"scope": "window"
+				},
+				"authoring-helper.enable.description": {
+					"type": "boolean",
+					"description": "Enabled = show description in the header.",
+					"default": true,
+					"scope": "window"
+				},
+				"authoring-helper.enable.modificationDate": {
+					"type": "boolean",
+					"description": "Enabled = show last modified date in the header.",
 					"default": true,
 					"scope": "window"
 				}
