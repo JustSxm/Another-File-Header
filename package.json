@@ -40,7 +40,7 @@
 			}
 		],
 		"configuration": {
-			"title": "Authoring Helper",
+			"title": "Another File Header",
 			"properties": {
 				"another-file-header.information.author": {
 					"type": "string",
@@ -87,7 +87,7 @@
 				"another-file-header.information.description": {
 					"type": "string",
 					"description": "The description for your project to put in the header.",
-					"default": "Authoring Helper is a Visual Studio Code extension to automatically or by command insert a header to your files.",
+					"default": "Another File Header is a Visual Studio Code extension to automatically or by command insert a header to your files.",
 					"scope": "window"
 				},
 				"another-file-header.information.customHeader": {

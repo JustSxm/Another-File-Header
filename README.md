@@ -1,6 +1,6 @@
 # another-file-header README
 
-Authoring Helper is a Visual Studio Code extension to automatically or by command insert a header to your files.
+Another File Header is a Visual Studio Code extension to automatically or by command insert a header to your files.
 You can find the source code [here](https://github.com/JustSxm/another-file-header)
 ![An image of the plugin](https://i.imgur.com/DTqxWOh.png)
 
