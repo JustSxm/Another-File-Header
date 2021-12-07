@@ -3,7 +3,7 @@ let createFileEvent: vscode.Disposable;
 let updateModificationEvent: vscode.Disposable;
 let contextState: vscode.ExtensionContext;
 export function activate(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand("authoring-helper.insertHeader", () => {
+	let disposable = vscode.commands.registerCommand("another-file-header.insertHeader", () => {
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) {
 			return;
@@ -14,10 +14,10 @@ export function activate(context: vscode.ExtensionContext) {
 		});
 	});
 
-	if (vscode.workspace.getConfiguration("authoring-helper.enable").get("insertOnCreation")) {
+	if (vscode.workspace.getConfiguration("another-file-header.enable").get("insertOnCreation")) {
 		createFileEvent = vscode.workspace.onDidCreateFiles((e) => insertHeader(e));
 	}
-	if (vscode.workspace.getConfiguration("authoring-helper.enable").get("modificationDate")) {
+	if (vscode.workspace.getConfiguration("another-file-header.enable").get("modificationDate")) {
 		updateModificationEvent = vscode.workspace.onWillSaveTextDocument((e) => updateModification(e));
 	}
 
@@ -49,15 +49,15 @@ export function updateModification(e: vscode.TextDocumentWillSaveEvent) {
 }
 
 export function onDidChangeConfiguration(e: vscode.ConfigurationChangeEvent) {
-	if (e.affectsConfiguration("authoring-helper.enable.insertOnCreation")) {
-		if (vscode.workspace.getConfiguration("authoring-helper.enable").get("insertOnCreation")) {
+	if (e.affectsConfiguration("another-file-header.enable.insertOnCreation")) {
+		if (vscode.workspace.getConfiguration("another-file-header.enable").get("insertOnCreation")) {
 			createFileEvent = vscode.workspace.onDidCreateFiles((e) => insertHeader(e));
 		} else {
 			createFileEvent.dispose();
 		}
 	}
-	if (e.affectsConfiguration("authoring-helper.enable.modificationDate")) {
-		if (vscode.workspace.getConfiguration("authoring-helper.enable").get("modificationDate")) {
+	if (e.affectsConfiguration("another-file-header.enable.modificationDate")) {
+		if (vscode.workspace.getConfiguration("another-file-header.enable").get("modificationDate")) {
 			updateModificationEvent = vscode.workspace.onWillSaveTextDocument((e) =>
 				updateModification(e)
 			);
@@ -68,7 +68,7 @@ export function onDidChangeConfiguration(e: vscode.ConfigurationChangeEvent) {
 }
 
 export function formatDate() {
-	let information = vscode.workspace.getConfiguration("authoring-helper.information");
+	let information = vscode.workspace.getConfiguration("another-file-header.information");
 	let dateFormat: string = information.get("dateFormat")
 		? information.get("dateFormat")!
 		: "yyyy-MM-dd HH:mm:ss";
@@ -120,7 +120,7 @@ export function constructHeader(languageId: string) {
 			break;
 	}
 
-	let information = vscode.workspace.getConfiguration("authoring-helper.information");
+	let information = vscode.workspace.getConfiguration("another-file-header.information");
 	let customHeader: string = information.get("customHeader")!;
 	if (customHeader.length > 0) {
 		customHeader = customHeader.replace("{author}", `${information.get("author")}`);
@@ -133,7 +133,7 @@ export function constructHeader(languageId: string) {
 		);
 		return commentorStart + customHeader.replace(/\\n/g, "\n") + commentorEnd;
 	}
-	let enabled = vscode.workspace.getConfiguration("authoring-helper.enable");
+	let enabled = vscode.workspace.getConfiguration("another-file-header.enable");
 
 	let header = commentorStart + "\n";
 	if (enabled.get("author")) {

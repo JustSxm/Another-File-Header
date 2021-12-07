@@ -1,10 +1,14 @@
 {
-	"name": "authoring-helper",
-	"displayName": "Authoring Helper",
-	"description": "Authoring Helper is a Visual Studio Code extension to automatically or by command insert a header to your files.",
+	"name": "another-file-header",
+	"displayName": "Another File Header",
+	"description": "Automatically or by command insert a header to your files. (customizable)",
 	"version": "1.0.1",
 	"publisher": "JustSxm",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JustSxm/Another-File-Header"
+	},
 	"keywords": [
 		"vscode",
 		"authoring",
@@ -13,9 +17,10 @@
 		"generator",
 		"head",
 		"header",
-		"comment"
+		"comment",
+		"file"
 	],
-	"icon": "https://i.imgur.com/WT7lgEd.png",
+	"icon": "icon.png",
 	"engines": {
 		"vscode": "^1.62.0"
 	},
@@ -23,81 +28,81 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:authoring-helper.insertHeader",
+		"onCommand:another-file-header.insertHeader",
 		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "authoring-helper.insertHeader",
+				"command": "another-file-header.insertHeader",
 				"title": "Insert Author Header"
 			}
 		],
 		"configuration": {
 			"title": "Authoring Helper",
 			"properties": {
-				"authoring-helper.information.author": {
+				"another-file-header.information.author": {
 					"type": "string",
 					"description": "The author name to put in the header.",
 					"default": "Sam",
 					"scope": "window"
 				},
-				"authoring-helper.information.email": {
+				"another-file-header.information.email": {
 					"type": "string",
 					"description": "The email to put in the header.",
 					"default": "Sam@example.com",
 					"scope": "window"
 				},
-				"authoring-helper.information.dateFormat": {
+				"another-file-header.information.dateFormat": {
 					"type": "string",
 					"description": "The date format to use in the header. Year = yyyy, Months = MM, Days = dd, Hours = HH, Minutes = mm, Seconds = ss",
 					"default": "yyyy-MM-dd HH:mm:ss",
 					"scope": "window"
 				},
-				"authoring-helper.enable.author": {
+				"another-file-header.enable.author": {
 					"type": "boolean",
 					"description": "Enabled = show author name in the header.",
 					"default": true,
 					"scope": "window"
 				},
-				"authoring-helper.enable.email": {
+				"another-file-header.enable.email": {
 					"type": "boolean",
 					"description": "Enabled = show email in the header.",
 					"default": true,
 					"scope": "window"
 				},
-				"authoring-helper.enable.creationDate": {
+				"another-file-header.enable.creationDate": {
 					"type": "boolean",
 					"description": "Enabled = show creation date in the header.",
 					"default": true,
 					"scope": "window"
 				},
-				"authoring-helper.enable.insertOnCreation": {
+				"another-file-header.enable.insertOnCreation": {
 					"type": "boolean",
 					"description": "Automatically insert the header on file creation.",
 					"default": true,
 					"scope": "window"
 				},
-				"authoring-helper.information.description": {
+				"another-file-header.information.description": {
 					"type": "string",
 					"description": "The description for your project to put in the header.",
 					"default": "Authoring Helper is a Visual Studio Code extension to automatically or by command insert a header to your files.",
 					"scope": "window"
 				},
-				"authoring-helper.information.customHeader": {
+				"another-file-header.information.customHeader": {
 					"type": "string",
 					"description": "Use this to insert a custom header. Use the following variables: {author}, {email}, {description}, {creation} and {modification}. Enable Toggles will be ignored.",
 					"default": "",
 					"scope": "window"
 				},
-				"authoring-helper.enable.description": {
+				"another-file-header.enable.description": {
 					"type": "boolean",
 					"description": "Enabled = show description in the header.",
 					"default": true,
 					"scope": "window"
 				},
-				"authoring-helper.enable.modificationDate": {
+				"another-file-header.enable.modificationDate": {
 					"type": "boolean",
 					"description": "Enabled = show last modified date in the header.",
 					"default": true,
