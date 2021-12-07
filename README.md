@@ -4,11 +4,11 @@ Authoring Helper is a Visual Studio Code extension to automatically or by comman
 
 ## Features
 
-- \!\[Author Name\]\
-- \!\[Author's Email\]
-- \!\[Custom Date Format\]
-- \!\[Creation Date\]
-- \!\[Automatic Insertion On File Creation\]
+- Author Name
+- Author's Email
+- Custom Date Format
+- Creation Date
+- Automatic Insertion On File Creation
 
 ## Extension Settings
 
